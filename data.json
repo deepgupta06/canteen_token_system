@@ -1,0 +1,27 @@
+{
+    "student":[
+        {
+            "name":"Deep",
+            "clg_id": "GKCEMEE123",
+            "dept":"EE"
+        },
+        {
+            "name":"Sristi",
+            "clg_id": "GKCEMEE124",
+            "dept":"EE"
+        },
+        {
+            "name":"Amit",
+            "clg_id": "GKCEMCSE123",
+            "dept":"CSE"
+        },
+        {
+            "name":"Sukanto",
+            "clg_id": "GKCEMCSE124",
+            "dept":"CSE"
+        },
+        
+                ]
+
+
+}

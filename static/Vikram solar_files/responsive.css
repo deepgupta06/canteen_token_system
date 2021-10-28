@@ -1,0 +1,187 @@
+@charset "utf-8";
+/* CSS Document */
+@media screen and (max-width: 1366px) {    
+	
+}
+
+@media screen and (max-width: 1200px) {    
+  
+}
+@media (max-width: 1024px) and (min-width: 992px) {
+.birthday_con{ width:90%;}
+}
+@media screen and (max-width: 991px) {
+	header_top{
+	padding: 9px 0 15px;
+	}
+	.header_bottom, .header_bottom.fixed {
+     padding: 8px 0 11px;
+    }
+	.logo img {
+     max-width: 150px;
+    }
+	.fixed{
+	 position: relative;
+	}
+	.about_services ul li:first-child, .about_services ul li:nth-child(6){
+	 margin-left:15px;
+	}
+	.about_services ul li:nth-child(5), .about_services ul li:nth-child(10){
+	margin-right:15px;
+	}
+	.md_img, .md_txt{
+	width:100%;
+	text-align:center;
+	margin:0px;
+	}
+	.md_img{
+	margin-bottom:15px;
+	}
+	.grievancecall, .employee{
+	margin:0 auto 20px;
+	}
+	/*-- employee directory --*/
+	.search_form input, .search_form .select_cover, .search_form .name input{
+	width: 100%;	
+	}
+	.birthday_con {
+    margin: 25% auto 0;
+    width: 100%;
+}
+.birthday_con .date {
+    margin: 0 0 20px;
+}
+	
+}
+
+@media screen and (max-width: 840px) {
+    .carousel-inner > .item{
+	min-height:210px;
+	background-position:center center;
+	background-repeat:no-repeat;		
+		
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		 background-size: cover;
+	}
+	.carousel-inner > .item img{
+	display:none;
+     }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .training {
+   margin: 0 0 50px;
+   }
+   /*-- inner page --*/
+   .left_panel, .right_content {   
+    width: 100% !important;
+	text-align:center;
+    }
+	.right_content{
+	padding:0;
+	margin:20px 0 0;
+	}
+	.left_panel ul li{
+	display:inline-block;
+	float:none;
+	width:auto;
+	margin:0 10px 10px;
+	}
+	.left_panel ul li a{
+	padding:12px 12px;
+	}
+	.left_panel ul li, .left_panel ul li:last-child{
+	border-top:#d7d5d6 dashed 1px;
+	border-bottom:#d7d5d6 dashed 1px;
+     }
+	.read_more{
+	 float:none;
+	 }
+	 .result_block ul{
+		 width:350px;
+	 }
+}  
+
+
+@media screen and (max-width: 640px) {   
+	.banner_txt .txt_info {    
+    color: #fff;
+    font-size: 19px;
+    line-height: 24px;
+    margin: 0 0 30px;
+    padding: 20px 20px;
+	}
+	.inner_pages {
+    margin: 0 0 50px;
+    }
+	.inner_banner{
+	background:#96121c url(../images/inner_banner_bg.jpg) center right no-repeat;
+	}
+	.name, .drop{
+	width:100%;
+	margin-bottom:10px;
+	padding: 0;
+    }
+	
+	.search_form .btn {    
+    margin: 20px 0 0 0;
+    }
+	.result_block ul{
+		width:100%;
+		margin:15px 0 0;
+	}
+	.my_profile .bold_text > span{ display:block;}
+	.birthday_con {
+    margin: 45% auto 0;
+}
+.birthday_avter {
+    height: 150px;
+    top: -98px;
+    width: 150px;
+}
+.birthday_avter img {
+    height: 150px;
+    width: 150px;
+}
+.birthday_con h2 {
+    font-size: 24px;
+}
+.birthday_con h3, .birthday_con .date {
+    font-size: 21px;
+}
+.announcements_area{ display:block; overflow:hidden;}
+.announcements_hed, .announcements_text{ width:100%;}
+}
+
+@media screen and (max-width: 480px) {
+	.top_cover span{
+		padding:8px 10px;
+	}
+	footer {   
+    padding: 30px 0 50px;
+	}
+}
+@media screen and (max-width: 360px) {	
+	 .top_cover span{
+		 padding:8px 6px;
+	 }
+	 footer ul li {
+       display: block;
+       font-size: 12px;
+       line-height: 19px;
+    }
+	footer ul li:after{
+		display:none;
+	}
+	.inner_banner{
+	font-size: 26px;
+    line-height: 31px;
+	}
+	.result_block li span{
+		display:block;
+		margin:5px 0 0;
+	}
+}

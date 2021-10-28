@@ -1,0 +1,16 @@
+
+@font-face {
+	font-family: 'Conv_RockwellStd-Bold';
+	src: url('../fonts/RockwellStd-Bold.eot');
+	src: local('☺'), url('../fonts/RockwellStd-Bold.woff') format('woff'), url('../fonts/RockwellStd-Bold.ttf') format('truetype'), url('../fonts/RockwellStd-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_DINOT';
+	src: url('../fonts/DINOT.eot');
+	src: local('☺'), url('../fonts/DINOT.woff') format('woff'), url('../fonts/DINOT.ttf') format('truetype'), url('../fonts/DINOT.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

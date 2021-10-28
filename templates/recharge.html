@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+<style>
+div .button
+{
+margin-bottom:10px;
+background-color: #2ecc71;
+border-color:#2ecc71;
+box-shadow: 2px 2px 2px #95a5a6
+
+}
+.button1 {width: 200px;}
+.button2 {width: 200px}
+.button3 {width: 100px}
+</style>
+
+
+
+</head>
+
+<body>
+  <section class="hero is-info is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            {{g.user.username}}'s Profile
+          </h1>
+          <h2 class="subtitle">
+            You are user number #{{g.user.id}}
+          </h2>
+          <h3 class="subtitle">
+          You are a {{g.user.group}}
+          </h3>
+          <p align="right">
+          <div class="columns is-centered">
+            <div class="container is-centered">
+                <button class="button button3" class="button is-success" onclick="window.location.href='{{ url_for( 'logout') }}';">Log Out</button>
+              </div>
+          </div>
+          </p>
+        </div>
+   </div>
+  
+  
+  
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <form method="POST">
+              <div class="field">
+                <label class="label">EMPLOYEE ID</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input" type="text" name="empid" placeholder="EMP ID" required>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Amount</label>
+                <p class="control has-icons-left">
+                  <input class="input" type="text" name="amount" placeholder="Amount" required>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <button type="submit" class="button button1" class="button is-success">
+                    Submit
+                  </button>
+                </p>
+                <div class="field">
+                <p class="control">
+                  <button class="button button2" class="button is-success" onclick="window.location.href='{{ url_for( 'recharge_status') }}';">
+                    Recharge History
+                  </button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

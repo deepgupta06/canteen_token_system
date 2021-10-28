@@ -1,0 +1,355 @@
+
+.navigation,
+.navigation ul,
+.navigation ul li,
+.navigation ul li a,
+.navigation #menu-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.navigation{
+	width:100%;
+	float:left;
+	padding:30px 0 0;
+}
+.navigation ul{
+	float:right;	
+}
+.navigation:after,
+.navigation > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.navigation #menu-button {
+  display: none;
+}
+
+
+.navigation > ul > li {
+  float: left;
+  margin-right: 0px;
+}
+.navigation > ul> li:after {
+    background: #ababab;
+    content: "";
+    height: 11px;
+    position: absolute;
+    right: 0;
+    top: 11px;
+    width: 1px;
+}
+.navigation > ul> li:last-child:after {
+	display:none;
+}
+.navigation > ul > li:last-child {
+	margin-right:0;
+}
+.navigation.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+.navigation.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+.navigation.align-center ul ul {
+  text-align: left;
+}
+.navigation.align-right > ul > li {
+  float: right;
+}
+.navigation.align-right ul ul {
+  text-align: right;
+}
+.navigation > ul > li > a {
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height:14px;
+  letter-spacing:0;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #616161;  
+  -webkit-transition: color .2s ease;
+  -moz-transition: color .2s ease;
+  -ms-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+}
+.navigation > ul > li:hover > a,
+.navigation > ul > li.active > a {
+  color: #ce181e;
+}
+
+.navigation ul ul {
+  position: absolute;
+  left: -9999px;
+  display:none;
+  background:#fff;
+  width:218px;
+  z-index:999;
+}
+.navigation ul li > ul{
+	box-shadow:5px 5px 0 0 rgba(0,0,0,.3);
+}
+.navigation li:hover > ul {
+  left:auto;
+}
+.navigation.align-right li:hover > ul {
+  right: 0;
+}
+.navigation ul ul ul {
+  margin-left: 0;
+  top: 0;
+}
+.navigation li > ul > li:hover ul{
+  left: -99%;
+}
+.navigation.align-right ul ul ul {
+  margin-left: 0;
+  margin-right: 100%;
+}
+.navigation ul ul li {
+  /*height: 0;*/
+  width:100%;
+  -webkit-transition: height .2s ease;
+  -moz-transition: height .2s ease;
+  -ms-transition: height .2s ease;
+  -o-transition: height .2s ease;
+  transition: height .2s ease;
+}
+.navigation ul li:hover > ul > li {
+ 
+}
+.navigation ul ul li a {
+  padding: 15px 15px;
+  color: #616161;
+  width: 100%;
+  font-size: 12px;
+  line-height:15px; 
+  border-bottom:#e5e5e5 solid 1px; 
+  text-decoration: none;
+  text-transform:uppercase;  
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.navigation ul ul li:last-child a{
+	border:none;
+}
+.navigation ul ul li:hover > a,
+.navigation ul ul li a:hover {
+  color: #fff;
+  background:#ce181e;
+}
+.navigation ul ul li.has-sub > a:after {
+  position: absolute;
+  top: 21px;
+  right: 10px;
+  width: 4px;
+  height: 4px;
+  border-bottom: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  content: "";
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition: border-color 0.2s ease;
+  -moz-transition: border-color 0.2s ease;
+  -ms-transition: border-color 0.2s ease;
+  -o-transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease;
+}
+.navigation.align-right ul ul li.has-sub > a:after {
+  right: auto;
+  left: 10px;
+  border-bottom: 0;
+  border-right: 0;
+  border-top: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+}
+.navigation ul ul li.has-sub:hover > a::after {
+  border-color: #ffffff;
+}
+
+@media screen and (max-width: 991px) {
+  .navigation{
+	  padding:6px 0 0;
+  }
+  .navigation > ul {
+    width: 100%;
+	min-width:300px;
+    display: block;	
+	background:#1C1C1C;
+	position:absolute;
+	top:100%;
+	z-index:999;
+	-moz-transform: translateX(200%);
+		-webkit-transform: translateX(200%);
+			-ms-transform: translateX(200%);
+				-o-transform: translateX(200%);
+					transform: translateX(200%);
+  }
+  .navigation ul.openit{
+	  position:absolute;
+	  top:100%;
+	  transform:translateX(0);
+	  left:auto;
+	  right:0;
+	  margin:auto;
+	  max-width:300px;
+	  overflow-y:auto;
+  }
+  .navigation li:hover > ul, .navigation li > ul > li:hover ul {
+    left:auto;
+   }
+  .navigation.align-center > ul,
+  .navigation.align-right ul ul {
+    text-align: left;
+  }
+  .navigation ul li,
+  .navigation ul ul li,
+  .navigation ul li:hover > ul > li {
+    width: 100%;
+	float: left;
+    height: auto;
+    border-top: 1px solid rgba(120, 120, 120, 0.15);
+  }
+  .navigation ul li a,
+  .navigation ul ul li a {
+    width: 100%;
+  }
+  .navigation > ul > li > a{
+	  line-height:32px;
+	  color: #fff;
+  }
+  .navigation > ul > li,
+  .navigation.align-center > ul > li,
+  .navigation.align-right > ul > li {
+    float: none;
+    display: block;
+  }
+  .navigation ul ul li a {
+    padding: 20px 20px 20px 30px;
+    font-size: 12px;
+    color: #fff;
+    background: none;
+  }
+  .navigation ul ul li:hover > a,
+  .navigation ul ul li a:hover {
+    color: #fff;
+  }
+  .navigation ul ul ul li a {
+    padding-left: 40px;
+  }
+  .navigation ul ul,
+  .navigation ul ul ul {
+    position: relative;
+    left: 0;
+    right: auto;
+    width: 100%;
+    margin: 0;
+	background:#111;
+  }
+  .navigation > ul > li.has-sub > a:after,
+  .navigation ul ul li.has-sub > a:after {
+    display: none;
+  }
+  
+  .navigation #menu-button {
+    display: block;
+    padding:15px 40px 14px 9px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+	display: table;
+    float: right;
+	width:auto;
+	background:#ce181e;
+  }
+  .navigation #menu-button:after {
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    display: block;
+    width: 15px;
+    height: 2px;
+    background: #fff;
+  }
+  .navigation #menu-button:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+    width: 15px;
+    height: 6px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+  }
+  .navigation .submenu-button {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    display: block;
+    border-left: 1px solid rgba(120, 120, 120, 0.15);
+    height: 52px;
+    width: 52px;
+    cursor: pointer;
+  }
+  .navigation .submenu-button:after {
+    content: '';
+    position: absolute;
+    top: 21px;
+    left: 26px;
+    display: block;
+    width: 1px;
+    height: 11px;
+    background: #fff;
+    z-index: 99;
+  }
+  .navigation .submenu-button:before {
+    content: '';
+    position: absolute;
+    left: 21px;
+    top: 26px;
+    display: block;
+    width: 11px;
+    height: 1px;
+    background: #fff;
+    z-index: 99;
+  }
+   .navigation ul ul .submenu-button:after, .navigation ul ul .submenu-button:before {
+	   background:#000;
+   }
+  .navigation .submenu-button.submenu-opened:after {
+    display: none;
+  }
+  .navigation ul li > ul{
+	  box-shadow:none;
+  }
+  .navigation ul ul {
+     width:100% !important; 
+}
+html, body {
+  overflow-x:hidden 
+} 
+}

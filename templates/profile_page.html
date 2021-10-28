@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Profile</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+      <style>
+         .button1 {width: 250px;}
+         .button2 {width: 250px}
+         .button3 {width: 250px}
+         .button5 {width: 250px}
+      </style>
+   </head>
+   <body>
+      <section class="hero is-info is-fullheight">
+         <div class="hero-body">
+            <div class="container">
+               <h1 class="title">
+                  {{g.login_user_fname}}'s Profile
+               </h1>
+               <h2 class="subtitle">
+                  You are user number #{{g.login_user_emp}}
+               </h2>
+               <h3 class="subtitle">
+                  You are a {{g.login_group}
+               </h3>
+               <p align="right">
+               <div class="columns is-centered">
+                  <div class="container is-centered">
+                     <button class="button button4" class="button is-success" onclick="window.location.href='{{ url_for( 'logout') }}';">Log Out</button>
+                  </div>
+               </div>
+               </p>
+            </div>
+         </div>
+         <div class="hero-body">
+            <div class="container">
+               <div class="columns is-centered">
+                  <div class="column is-half">
+                     {%if g.user.group == "user"%}
+                     <div class="field">
+                        <div class="control">
+                           <button class="button button1" class="button is-success", onclick="window.location.href='{{ url_for( 'recharge') }}';" disabled><b>Recharge</b></button>
+                        </div>
+                     </div>
+                     {%elif g.user.group == "admin"%}
+                     <div class="field">
+                        <div class="control">
+                           <button class="button button1" class="button is-success", onclick="window.location.href='{{ url_for( 'recharge') }}';"><b>Recharge</b></button>
+                        </div>
+                     </div>
+                     <div class=field>
+                        <div class="control">
+                           <button class="button button5" class="button is-success", onclick="window.location.href='{{ url_for( 'adduser') }}';"><b>Add User</b></button>
+                        </div>
+                     </div>
+                     {%else%}
+                     <div class="field">
+                        <div class="control">
+                           <button class="button button1" class="button is-success", onclick="window.location.href='{{ url_for( 'recharge') }}';"><b>Recharge</b></button>
+                        </div>
+                     </div>
+                     {%endif%}
+                  
+                  <div class="field">
+                     <p class="control">
+                        <button class="button button2" class="button is-success" onclick="window.location.href='{{ url_for( 'availablebalance') }}';"><b>Available Balance</b></button>
+                     </p>
+                  </div>
+                  <div class="field">
+                     <p class="control has-icons-left">
+                        <button class="button button3" class="button is-success" onclick="window.location.href='{{ url_for( 'bookinghistory') }}';"><b>Booking History</b></button>
+                     </p>
+                  </div>
+				  </div>
+               </div>
+            </div>
+         </div>
+         </div>
+      </section>
+   </body>
+</html>
