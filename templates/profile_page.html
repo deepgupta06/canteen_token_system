@@ -18,13 +18,13 @@
          <div class="hero-body">
             <div class="container">
                <h1 class="title">
-                  {{g.login_user_fname}}'s Profile
+                  {{g.users["login_user_fname"]}}'s Profile
                </h1>
                <h2 class="subtitle">
-                  You are user number #{{g.login_user_emp}}
+                  You are user number #{{g.users["login_user_emp"]}}
                </h2>
                <h3 class="subtitle">
-                  You are a {{g.login_group}
+                  You are a {{g.users["login_group"]}}
                </h3>
                <p align="right">
                <div class="columns is-centered">
@@ -39,13 +39,13 @@
             <div class="container">
                <div class="columns is-centered">
                   <div class="column is-half">
-                     {%if g.user.group == "user"%}
+                     {%if g.users["login_group"] == "User"%}
                      <div class="field">
                         <div class="control">
                            <button class="button button1" class="button is-success", onclick="window.location.href='{{ url_for( 'recharge') }}';" disabled><b>Recharge</b></button>
                         </div>
                      </div>
-                     {%elif g.user.group == "admin"%}
+                     {%elif g.users["login_group"] == "Admin"%}
                      <div class="field">
                         <div class="control">
                            <button class="button button1" class="button is-success", onclick="window.location.href='{{ url_for( 'recharge') }}';"><b>Recharge</b></button>

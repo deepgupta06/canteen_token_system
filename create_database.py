@@ -25,27 +25,31 @@ class DatabaseOp:
     def inserting_values(self, table_name, values):
         for value in values:
             quiery = "INSERT INTO {} VALUES{}".format(table_name, value)
-            self.mycurser.execute(quiery)
-            self.conn.commit()
-            self.conn.close()
+            try:
+                self.mycurser.execute(quiery)
+                self.conn.commit()
+                self.conn.close()
+            except:
+                self.conn.close()
             
     def deletion_of_values(self, table_name, condition):
         '''condition format =(columan_name, matching_value)'''
         quiery = "DELETE FROM {} where {}=={}".format(table_name,condition[0],condition[1])
-        self.mycurser.execute(quiery)
-        self.conn.commit()
+        try:
+            self.mycurser.execute(quiery)
+            self.conn.commit()
+            self.conn.close()
+        except:
+            self.conn.close()
+            
         
     def get_userid_pw(self, table_name,input_userid):
-        quiery = "SELECT * FROM {} where userid == 'deep.g'".format(table_name)
+        quiery = "SELECT * FROM {} where userid == '{}'".format(table_name,input_userid)
+        print(quiery)
         data = self.mycurser.execute(quiery)
         return data
 
 database = DatabaseOp("canteen_new1.db")
-data_fatching = database.get_userid_pw("empinfo","deep.g")
+data_fatching = database.get_userid_pw("empinfo", "tannu.t")
 for i in data_fatching:
-    login_user_emp = i[0]
-    login_user_fname = i[1]
-    login_user_lname = i[2]
-    login_user_id = i[3]
-    login_user_pw = i[4]
-    login_group = i[5]
+    print(i)

@@ -32,42 +32,47 @@ class User:
         return f'<User: {self.username}>'
 
 
-users = []
-users.append(User(id=1, username="deep", password="pass1", group="admin"))
-users.append(User(id=2, username="sayantan", password="pass2", group="superuser"))
-users.append(User(id=3, username="soumitra", password="pass3", group="user"))
-
-
 app = Flask(__name__)
 app.secret_key = "janinaja"
-
-
+users={}
+users["login_user_emp"] = ""
+users["login_user_fname"] = ""
+users["login_user_lname"] = ""
+users["login_user_id"] = ""
+users["login_user_pw"] = ""
+users["login_group"] = ""
+user =""
 @app.before_request
 def before_request():
+    global users
+    global user
     if "user_id" in session:
-        user = [x for x in users if x.id == session["user_id"]][0]
-        g.user = user
-        print(g.user)
-
+        if users["login_user_id"] == session["user_id"]:
+            user=users["login_user_emp"]
+        g.users = users
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         session.pop("user_id", None)
-        database = DatabaseOp("canteen_new1.db")
-        data_fatching = database.get_userid_pw("empinfo","deep.g")
-        for i in data_fatching:
-            login_user_emp = i[0]
-            login_user_fname = i[1]
-            login_user_lname = i[2]
-            login_user_id = i[3]
-            login_user_pw = i[4]
-            login_group = i[5]
         username = request.form["username"]
         password = request.form["password"]
+        print(username)
+
+        database = DatabaseOp("canteen_new1.db")
+        data_fatching = database.get_userid_pw("empinfo",username)
+        for i in data_fatching:
+            users["login_user_emp"] = i[0]
+            users["login_user_fname"] = i[1]
+            users["login_user_lname"] = i[2]
+            users["login_user_id"] = i[3]
+            users["login_user_pw"] = i[4]
+            users["login_group"] = i[5]
+            
         
-        if login_user_id==username and login_user_pw == password:
-            session["user_id"] = login_user_emp
+        if users["login_user_id"]==username and users["login_user_pw"] == password:
+            session["user_id"] = users["login_user_emp"]
+            g.users=users
             return redirect("profile")
         return redirect("login")
 
@@ -82,6 +87,14 @@ def profile():
 @app.route("/logout")
 def logout():
     session.pop("user_id", None)
+    login_user_emp=""
+    login_user_fname=""
+    login_user_lname=""
+    login_user_id=""
+    login_user_pw=""
+    login_group=""
+    user=""
+
     return render_template("log_out.html")
 
 @app.route("/recharge")

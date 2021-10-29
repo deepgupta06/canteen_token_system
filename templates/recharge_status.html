@@ -17,13 +17,13 @@
          <div class="hero-body">
             <div class="container">
                <h1 class="title">
-                  {{g.user.username}}'s Profile
+                  {{g.users["login_user_fname"]}}'s Profile
                </h1>
                <h2 class="subtitle">
-                  You are user number #{{g.user.id}}
+                  You are user number #{{g.users["login_user_emp"]}}
                </h2>
                <h3 class="subtitle">
-                  You are a {{g.user.group}}
+                  You are a {{g.users["login_group"]}}
                </h3>
                <p align="right">
                <div class="columns is-centered">
